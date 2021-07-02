@@ -18,7 +18,7 @@ class StacksChart extends React.Component{
 
     componentDidMount() {
 
-        axios.get("http://localhost:5000/admin/uploads")
+        axios.get("https://backend-conference.herokuapp.com/admin/uploads")
             .then(response=>{
 
                 let papers=response.data.filter(upload=>{

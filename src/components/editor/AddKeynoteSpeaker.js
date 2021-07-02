@@ -18,7 +18,7 @@ class AddKeynoteSpeaker extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ keynoteSpeakers: response.data.filter(request =>{
                         return request.type === 'keynote';
@@ -61,9 +61,9 @@ class AddKeynoteSpeaker extends Component {
             buttonText: 'uploading...'
         })
 
-        axios.post('http://localhost:5000/editor/addKeynote/', formData, {
+        axios.post('https://backend-conference.herokuapp.com/editor/addKeynote/', formData, {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {

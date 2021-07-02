@@ -47,7 +47,7 @@ export default class ResearchPayment extends Component {
         };
         console.log('DATA to send : ', payment);
 
-        axios.post('http://localhost:5000/user/addPayment', payment, {
+        axios.post('https://backend-conference.herokuapp.com/user/addPayment', payment, {
             headers:{
                 Authorization:sessionStorage.getItem("token")
             }

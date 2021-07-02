@@ -17,7 +17,7 @@ class Logs extends React.Component{
 
     componentDidMount() {
 
-        axios.get("http://localhost:5000/admin/logs")
+        axios.get("https://backend-conference.herokuapp.com/admin/logs")
             .then(response=>{
                 this.setState({logs:response.data})
                 console.log(response.data)

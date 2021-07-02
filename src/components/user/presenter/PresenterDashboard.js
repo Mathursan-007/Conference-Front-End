@@ -41,7 +41,7 @@ class PresenterDashBoard extends React.Component{
 
                 const email = decode(localStorage.getItem('token')).username.split(' ')[0]
 
-                axios.get('http://localhost:5000/reviewer/uploads/notify/' + email + "/workshop")
+                axios.get('https://backend-conference.herokuapp.com/reviewer/uploads/notify/' + email + "/workshop")
                     .then(response => {
                         console.log("response: ", response.data);
 

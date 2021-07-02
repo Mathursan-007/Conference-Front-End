@@ -20,7 +20,7 @@ class Requests extends React.Component{
 
 
 
-       axios.get("http://localhost:5000/admin/requests")
+       axios.get("https://backend-conference.herokuapp.com/admin/requests")
            .then(response=>{
                this.setState({requests:response.data})
                console.log(response.data)

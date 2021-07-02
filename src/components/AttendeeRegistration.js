@@ -2,7 +2,6 @@ import React from 'react'
 import  '../styles/register.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import axios from "axios";
 import {Link} from "react-router-dom";
 import PriceCheck from '../functions/PriceOfType'
 

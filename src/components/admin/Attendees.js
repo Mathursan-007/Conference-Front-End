@@ -16,7 +16,7 @@ class Attendees extends React.Component{
     componentDidMount() {
 
 
-        axios.get("http://localhost:5000/admin/attendees")
+        axios.get("https://backend-conference.herokuapp.com/admin/attendees")
             .then(response=>{
                 this.setState({attendees:response.data})
                 console.log(response.data)

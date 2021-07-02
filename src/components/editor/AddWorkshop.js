@@ -39,9 +39,9 @@ class AddWorkshop extends Component {
             buttonText: 'uploading...'
         })
 
-        axios.post('http://localhost:5000/editor/addWorkshop/', formData , {
+        axios.post('https://backend-conference.herokuapp.com/editor/addWorkshop/', formData , {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {

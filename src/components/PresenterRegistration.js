@@ -63,7 +63,7 @@ class PresenterRegistration extends React.Component{
             };
 
 
-            axios.post('http://localhost:5000/user/addUser', presenter)
+            axios.post('https://backend-conference.herokuapp.com/user/addUser', presenter)
                 .then(res => {
 
                     this.setState({errorMessage:true,popMessage:'Successfully registered Welcome to ICAF'})

@@ -23,7 +23,7 @@ class AddConference extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ conference: response.data.filter(request =>{
                         return request.type === 'conference';
@@ -77,9 +77,9 @@ class AddConference extends Component {
 
         console.log(conference);
 
-        axios.post('http://localhost:5000/editor/addConference/', conference,{
+        axios.post('https://backend-conference.herokuapp.com/editor/addConference/', conference,{
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {

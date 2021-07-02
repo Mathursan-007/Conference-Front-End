@@ -23,7 +23,7 @@ export default class WorkshopUpload extends React.Component {
 
     changeStatus=(_id, msg) => {
         // console.log("em: ", this.props)
-        axios.patch('http://localhost:5000/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
+        axios.patch('https://backend-conference.herokuapp.com/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
             email:this.props.workshopUpload.details.email,type:"workshop"},{
             headers:{
                 Authorization:localStorage.getItem("token")

@@ -23,7 +23,7 @@ export default class ResearchUpload extends React.Component {
 
     changeStatus=(_id, msg) => {
 
-        axios.patch('http://localhost:5000/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
+        axios.patch('https://backend-conference.herokuapp.com/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
                                     email:this.props.upload.details.email,type:"research"},{
              headers:{
                  Authorization:localStorage.getItem("token")

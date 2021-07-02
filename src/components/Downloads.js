@@ -10,7 +10,7 @@ export default class Downloads extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ templates: response.data.filter(request =>{
                         return request.type === 'template';
@@ -32,7 +32,7 @@ export default class Downloads extends React.Component{
 
                         {this.state.templates.map(req =>
                             <React.Fragment>
-                                {req.status == 'approved' ?
+                                {req.status === 'approved' ?
 
                                     <div className="card col-lg-12 mt-4 text-center bg-dark p-3">
                                         <a

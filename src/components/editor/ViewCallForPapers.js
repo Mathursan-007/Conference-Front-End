@@ -29,14 +29,14 @@ class ViewCallForPapers extends React.Component {
             title: this.state.name
         }
 
-        axios.put('http://localhost:5000/editor/updateCallForPaper/'+this.state.request._id, callForPaper, {
+        axios.put('https://backend-conference.herokuapp.com/editor/updateCallForPaper/'+this.state.request._id, callForPaper, {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {
 
-                axios.get('http://localhost:5000/editor/requests')
+                axios.get('https://backend-conference.herokuapp.com/editor/requests')
                     .then(response => {
                         this.setState({ requests: response.data });
 

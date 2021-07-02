@@ -21,7 +21,7 @@ export default class WorkshopUploads extends React.Component {
     componentDidMount() {
 
 
-        axios.get('http://localhost:5000/reviewer/uploads')
+        axios.get('https://backend-conference.herokuapp.com/reviewer/uploads')
             .then(response => {
                 this.setState({ workshopUploads:  response.data.filter(upload => {
                         return upload.type == "workshop"

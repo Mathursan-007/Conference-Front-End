@@ -41,14 +41,14 @@ class ViewKeynoteSpeakers extends React.Component {
         formData.append('photo', this.state.photo);
         formData.append('imgUrl', this.state.request.details.photo);
 
-        axios.put('http://localhost:5000/editor/updateKeynote/'+this.state.request._id, formData, {
+        axios.put('https://backend-conference.herokuapp.com/editor/updateKeynote/'+this.state.request._id, formData, {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {
 
-                axios.get('http://localhost:5000/editor/requests')
+                axios.get('https://backend-conference.herokuapp.com/editor/requests')
                     .then(response => {
                         this.setState({ requests: response.data });
 

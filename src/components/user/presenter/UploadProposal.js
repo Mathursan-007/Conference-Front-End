@@ -29,7 +29,7 @@ class UploadProposal extends React.Component{
 
         console.log(email)
 
-        axios.get('http://localhost:5000/user/presenterUpload/'+ email)
+        axios.get('https://backend-conference.herokuapp.com/user/presenterUpload/'+ email)
             .then(response => {
 
                 if(response.data.count) {

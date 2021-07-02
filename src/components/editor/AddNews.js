@@ -28,9 +28,9 @@ class AddNews extends Component {
             buttonText: 'Adding news...'
         })
 
-        axios.post('http://localhost:5000/editor/addNews/', news, {
+        axios.post('https://backend-conference.herokuapp.com/editor/addNews/', news, {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {

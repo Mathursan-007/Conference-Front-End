@@ -11,7 +11,7 @@ export default class CallForPapers extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ callForPapers: response.data.filter(request =>{
                         return request.type === 'call for paper';
@@ -47,7 +47,7 @@ export default class CallForPapers extends React.Component{
                         {this.state.callForPapers.map(req =>
 
                             <React.Fragment>
-                                {req.status == 'approved' ?
+                                {req.status === 'approved' ?
 
                                     <div className="card col-sm-4 mt-3 ml-2"  style={{minHeight: "40vh",maxWidth: "60vh",backgroundColor: "#0c0443"}}>
 

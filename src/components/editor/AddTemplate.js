@@ -32,7 +32,11 @@ class AddTemplate extends Component {
             buttonText: 'Uploading file...'
         })
 
-        axios.post('http://localhost:5000/editor/addTemplate/', formData)
+        axios.post('https://backend-conference.herokuapp.com/editor/addTemplate/', formData,{
+            headers:{
+                Authorization:localStorage.getItem("token")
+            }
+        })
             .then(res => {
                 this.setState({
                     title: '',

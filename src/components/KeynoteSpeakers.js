@@ -11,7 +11,7 @@ export default class KeynoteSpeakers extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ keynoteSpeakers: response.data.filter(request =>{
                         return request.type === 'keynote';

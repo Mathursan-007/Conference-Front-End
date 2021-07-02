@@ -36,7 +36,7 @@ class SubmissionsChart extends React.Component{
         //console.log()
 
 
-        axios.get("http://localhost:5000/admin/uploads")
+        axios.get("https://backend-conference.herokuapp.com/admin/uploads")
             .then(response=>{
 
                 console.log(response.data)

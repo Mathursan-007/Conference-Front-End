@@ -29,9 +29,9 @@ class AddCallForPaper extends Component {
         })
 
 
-        axios.post('http://localhost:5000/editor/addCallForPaper/', callForPaper , {
+        axios.post('https://backend-conference.herokuapp.com/editor/addCallForPaper', callForPaper , {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {

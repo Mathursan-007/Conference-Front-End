@@ -30,7 +30,7 @@ class Payment extends React.Component{
 
 
 
-        axios.post('http://localhost:5000/user/addAttendee', attendee)
+        axios.post('https://backend-conference.herokuapp.com/user/addAttendee', attendee)
             .then(res => {
                 this.setState({errorMessage:true,popMessage:'Payment Successful'})
                 window.location = "/"

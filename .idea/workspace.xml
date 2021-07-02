@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86d34aa5-24ea-4af0-a4b8-09066d137f39" name="Default Changelist" comment="pckg commit">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="86d34aa5-24ea-4af0-a4b8-09066d137f39" name="Default Changelist" comment="home commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AttendeeRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AttendeeRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CallForPapers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CallForPapers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Downloads.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Downloads.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/KeynoteSpeakers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/KeynoteSpeakers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListWorkshops.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListWorkshops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/News.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PresenterRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PresenterRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResearcherRegistration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResearcherRegistration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Attendees.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Attendees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/StacksChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/StacksChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/SubmissionsChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/SubmissionsChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddCallForPaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddCallForPaper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddConference.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddKeynoteSpeaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddKeynoteSpeaker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/AddWorkshop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/AddWorkshop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewCallForPapers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewCallForPapers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewConference.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewKeynoteSpeakers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewKeynoteSpeakers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewTemplates.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewTemplates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editor/ViewWorkshops.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editor/ViewWorkshops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviewer/ResearchUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviewer/ResearchUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviewer/ResearchUploads.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviewer/ResearchUploads.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviewer/WorkshopUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviewer/WorkshopUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviewer/WorkshopUploads.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviewer/WorkshopUploads.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/presenter/PresenterDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/presenter/PresenterDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/presenter/UploadProposal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/presenter/UploadProposal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/researcher/ResearchPayment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/researcher/ResearchPayment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/researcher/ResearcherDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/researcher/ResearcherDashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/researcher/UploadPaper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/researcher/UploadPaper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1625156785801</updated>
       <workItem from="1625156788228" duration="12567000" />
-      <workItem from="1625211756270" duration="4438000" />
+      <workItem from="1625211756270" duration="7740000" />
     </task>
     <task id="LOCAL-00001" summary="styles commit">
       <created>1625161287073</created>
@@ -144,7 +180,28 @@
       <option name="project" value="LOCAL" />
       <updated>1625167717658</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="frontend commit">
+      <created>1625225186785</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1625225186785</updated>
+    </task>
+    <task id="LOCAL-00013" summary="frontend commit">
+      <created>1625225747649</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625225747649</updated>
+    </task>
+    <task id="LOCAL-00014" summary="home commit">
+      <created>1625226585486</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1625226585486</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +227,8 @@
     <MESSAGE value="components commit" />
     <MESSAGE value="lock commit" />
     <MESSAGE value="pckg commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="pckg commit" />
+    <MESSAGE value="frontend commit" />
+    <MESSAGE value="home commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="home commit" />
   </component>
 </project>

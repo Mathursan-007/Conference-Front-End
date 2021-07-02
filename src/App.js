@@ -1,7 +1,6 @@
 import React from 'react'
 import AdminDashboard from './components/admin/AdminDashboard'
-import Requests from './components/admin/Requests'
-import {BrowserRouter as Router, Switch,Route,Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Header from "./components/Header";

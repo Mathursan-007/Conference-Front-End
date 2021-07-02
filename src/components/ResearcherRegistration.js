@@ -62,7 +62,7 @@ class ResearcherRegistration extends React.Component{
             };
 
 
-            axios.post('http://localhost:5000/user/addUser', researcher)
+            axios.post('https://backend-conference.herokuapp.com/user/addUser', researcher)
                 .then(res => {
                     this.setState({errorMessage:true,popMessage:'Successfully registered Welcome to ICAF'})
                     console.log(res);

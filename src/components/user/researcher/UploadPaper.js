@@ -29,7 +29,7 @@ class UploadPaper extends React.Component{
 
         console.log(email)
 
-        axios.get('http://localhost:5000/user/researcherUpload/'+ email)
+        axios.get('https://backend-conference.herokuapp.com/user/researcherUpload/'+ email)
             .then(response => {
                 if(response.data.count) {
                     this.setState({
