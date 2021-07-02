@@ -18,7 +18,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/conference')
+        axios.get('https://backend-conference.herokuapp.com/editor/conference')
             .then(response => {
                 this.setState({
 
