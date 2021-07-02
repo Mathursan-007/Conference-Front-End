@@ -1,0 +1,55 @@
+.footer-basic {
+
+    background-color:#040935;
+    color:#ffffff;
+    padding: 5px;
+
+
+}
+.footer-basic .social {
+    text-align:center;
+
+}
+.footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:30px;
+    line-height:30px;
+    display:inline-block;
+
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+
+
+}
+.footer-basic .social > a:hover {
+    opacity:0.9;
+
+}
+.footer-basic .copyright {
+
+    text-align: center;
+    font-size: 15px;
+    color: #cbc7c7;
+
+
+
+}
+.hrStyles {
+
+    background-color:#FFFFFF;
+
+}
+.footer-basic h3 {
+    margin-left:40px;
+    margin-top: 15px;
+}
+@media screen and (max-width: 700px) {
+    .footer {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+}

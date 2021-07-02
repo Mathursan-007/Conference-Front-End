@@ -1,0 +1,62 @@
+.payment-body {
+    background: linear-gradient(to right, rgba(235, 224, 232, 1) 52%, rgb(255, 0, 0) 53%, rgb(255, 0, 0) 100%);
+    font-family: 'Roboto', sans-serif
+}
+
+.cards {
+    border: none;
+    max-width: 500px;
+    border-radius: 15px;
+    margin: 150px 0 150px;
+    padding: 5px;
+    padding-bottom: 20px !important
+}
+
+.payment-heading {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500
+}
+
+.payment-text-warning {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000 !important
+}
+
+#payment-cno {
+    transform: translateY(-10px)
+}
+
+.payment-input {
+    border-bottom: 1px solid #E8E5D2 !important;
+    font-weight: bold;
+    border-radius: 0;
+    border: 0
+
+}
+
+.payment-form-group input:focus {
+    border: 0;
+    outline: 0
+}
+
+.payment-col-sm-5 {
+    padding-left: 90px
+}
+
+.payment-btn {
+    background: #af1400 !important;
+    border: none;
+    border-radius: 30px;
+    width:200px;
+    font-weight: 100;
+    font-size: 20px;
+    color: #ffffff;
+
+
+}
+
+.payment-btn:focus {
+    box-shadow: none
+}

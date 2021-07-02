@@ -1,0 +1,40 @@
+.bg-cover {
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+
+    background-image: url("../images/bg2.png");
+
+
+    background-size: cover;
+}
+
+.height{
+    min-height: 100vh;
+
+}
+
+.bee{
+    padding: 70px 0;
+    text-align: center;
+}
+
+.containerHeader {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centeredHeader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: 1000;
+    letter-spacing: 10px;
+}
+
