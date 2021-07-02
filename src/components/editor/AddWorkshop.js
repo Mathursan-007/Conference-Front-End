@@ -117,7 +117,7 @@ class AddWorkshop extends Component {
 
                         {this.state.img === '' ? '' :
                             <React.Fragment>
-                                <img src={`${this.state.img}`} alt={'no image'} style={{width: "100%",height:"50vh"}} />
+                                <img src={`${this.state.img}`} alt={'no image'} style={{width: "100%",height:"20vh"}} />
                             </React.Fragment>
                         }
 

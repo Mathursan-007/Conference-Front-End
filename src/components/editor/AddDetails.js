@@ -38,11 +38,9 @@ class AddDetails extends Component {
 
     render() {
         return (
-            <div className="container" style={{marginTop: "70px"}}>
+            <div className="container" style={{marginTop: "20px",marginRight:'100px'}}>
                 <div className="row justify-content-center">
                     <div className="col-8 col-md-5 col-lg-5 pb-5">
-                        <div className="card rounded-0">
-                            <div className="card-header p-0">
                                 <div className="text-white text-center py-2">
                                     <div className="form-group">
                                         <select className="form-control  border-info" value={this.state.detail} onChange={this.handleChange} >
@@ -55,13 +53,11 @@ class AddDetails extends Component {
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div className="row justify-content-center">
-                    <div className="col-12 col-md-8 col-lg-10 pb-5">
+                    <div className="col-12 col-md-8 col-lg-10">
 
                         {this.displayDetail()}
 

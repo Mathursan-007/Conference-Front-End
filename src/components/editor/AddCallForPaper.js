@@ -74,7 +74,7 @@ class AddCallForPaper extends Component {
                                     name="title"
                                     value={this.state.title}
                                     onChange={this.handleInput}
-                                    placeholder="Enter title of workshop"
+                                    placeholder="Enter title of Paper"
                                     disabled={this.state.buttonState}
                                     required />
                             </div>
