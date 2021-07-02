@@ -108,7 +108,7 @@ class ViewNews extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ requests: response.data });
                 console.log(this.state.requests);
