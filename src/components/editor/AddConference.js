@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ModalMessage from '../PopUp';
 
 class AddConference extends Component {
-
     state = {
         name: '',
         institute: '',
@@ -13,7 +13,8 @@ class AddConference extends Component {
         conference: [],
         buttonState: false,
         buttonText: 'Add Conference',
-        img:  ''
+        img:  '',
+        successModal: false
     }
 
 
@@ -83,6 +84,7 @@ class AddConference extends Component {
             }
         })
             .then(res => {
+                this.setState({successModal: true})
 
                 this.setState({
                     conference: [...this.state.conference,res.data],
@@ -233,6 +235,14 @@ class AddConference extends Component {
                     </div>
 
                 </div>
+
+                <ModalMessage
+                    title = {'Conference'}
+                    description = {'conference details were successfully added'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
             </form>
         );
     }

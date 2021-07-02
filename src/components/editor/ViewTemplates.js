@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {Button, Modal, ModalBody, ModalTitle} from "react-bootstrap";
 import ModalHeader from "react-bootstrap/ModalHeader";
+import ModalMessage from '../PopUp';
 
 class ViewTemplates extends React.Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class ViewTemplates extends React.Component {
             request:'',
             title: '',
             file: '',
-            fileUrl: ''
+            fileUrl: '',
+            successModal: false
         };
     }
 
@@ -45,6 +47,8 @@ class ViewTemplates extends React.Component {
             }
         })
             .then(res => {
+
+                this.setState({successModal: true})
 
                 axios.get('https://backend-conference.herokuapp.com/editor/requests')
                     .then(response => {
@@ -133,17 +137,22 @@ class ViewTemplates extends React.Component {
 
     render() {
         return (
-
+            <div className="card border-primary rounded-0">
+                <div className="card-header p-0">
+                    <div className="bg-info text-white text-center py-2">
+                        <h3>Templates</h3>
+                    </div>
+                </div>
                 <div className="card-body p-3">
 
                     <div className="table-responsive" id="sailorTableArea">
-                        <table id="sailorTable" className="table table-hover table-dark  table-condensed tablebody text-center" width="100%">
+                        <table id="sailorTable" className="table table-striped table-bordered table-condensed tablebody text-center" width="100%">
 
-                            <thead className="tablehead" style={{position:'sticky',top:0}}>
+                            <thead className="tablehead">
                             <tr>
                                 <th>Title</th>
-                                <th>File</th>
-                                <th>Status</th>
+                                <th>file</th>
+                                <th>status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -154,7 +163,7 @@ class ViewTemplates extends React.Component {
                                     {(request.type === 'template') ?
                                         <tr>
                                             <td>{request.details.name}</td>
-                                            <td><a href={`${request.details.file}`} style={{color:'#69bdf5'}}>Download Template</a></td>
+                                            <td><a href={`${request.details.file}`}>Download Template</a></td>
                                             <td><span className={`${this.props.statusColor(request.status)} p-1 text-light rounded`}>{request.status}</span></td>
                                             <td>
 
@@ -184,6 +193,13 @@ class ViewTemplates extends React.Component {
 
                 </div>
 
+                <ModalMessage
+                    description = {'template was successfully edited'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
+            </div>
         );
     }
 }

@@ -2,9 +2,9 @@ import React from 'react';
 import axios from "axios";
 import {Button, Modal, ModalBody, ModalTitle} from "react-bootstrap";
 import ModalHeader from "react-bootstrap/ModalHeader";
+import ModalMessage from '../PopUp';
 
 class ViewCallForPapers extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +12,7 @@ class ViewCallForPapers extends React.Component {
             show:false,
             request:'',
             name: '',
+            successModal: false
         };
     }
 
@@ -35,6 +36,8 @@ class ViewCallForPapers extends React.Component {
             }
         })
             .then(res => {
+
+                this.setState({successModal: true})
 
                 axios.get('https://backend-conference.herokuapp.com/editor/requests')
                     .then(response => {
@@ -93,7 +96,7 @@ class ViewCallForPapers extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/editor/requests')
+        axios.get('https://backend-conference.herokuapp.com/editor/requests')
             .then(response => {
                 this.setState({ requests: response.data });
 
@@ -105,12 +108,18 @@ class ViewCallForPapers extends React.Component {
 
     render() {
         return (
-
+            <div className="card border-primary rounded-0">
+                <div className="card-header p-0">
+                    <div className="bg-info text-white text-center py-2">
+                        <h3>Workshops</h3>
+                    </div>
+                </div>
                 <div className="card-body p-3">
-                    <div className="table-responsive" id="sailorTableArea">
-                        <table id="sailorTable" className="table table-hover table-dark table-condensed tablebody text-center" width="100%">
 
-                            <thead className="tablehead" style={{position:'sticky',top:0}}>
+                    <div className="table-responsive" id="sailorTableArea">
+                        <table id="sailorTable" className="table table-striped table-bordered table-condensed tablebody text-center" width="100%">
+
+                            <thead className="tablehead">
                             <tr>
                                 <th>Title</th>
                                 <th>Status</th>
@@ -150,7 +159,16 @@ class ViewCallForPapers extends React.Component {
                             </tbody>
                         </table>
                     </div>
+
                 </div>
+
+                <ModalMessage
+                    description = {'call for paper was successfully edited'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
+            </div>
         );
     }
 }

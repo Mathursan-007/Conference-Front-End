@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {Button, Modal, ModalBody, ModalTitle} from "react-bootstrap";
 import ModalHeader from "react-bootstrap/ModalHeader";
+import ModalMessage from '../PopUp';
 
 class ViewWorkshops extends React.Component {
     constructor(props) {
@@ -13,7 +14,8 @@ class ViewWorkshops extends React.Component {
             name: '',
             description: '',
             photo: '',
-            img: ''
+            img: '',
+            successModal: false
         };
     }
 
@@ -46,6 +48,8 @@ class ViewWorkshops extends React.Component {
             }
         })
             .then(res => {
+
+                this.setState({successModal: true})
 
                 axios.get('https://backend-conference.herokuapp.com/editor/requests')
                     .then(response => {
@@ -145,13 +149,18 @@ class ViewWorkshops extends React.Component {
 
     render() {
         return (
-
+            <div className="card border-primary rounded-0">
+                <div className="card-header p-0">
+                    <div className="bg-info text-white text-center py-2">
+                        <h3>Workshops</h3>
+                    </div>
+                </div>
                 <div className="card-body p-3">
 
                     <div className="table-responsive" id="sailorTableArea">
-                        <table id="sailorTable" className="table table-hover table-dark  table-condensed tablebody text-center" width="100%">
+                        <table id="sailorTable" className="table table-striped table-bordered table-condensed tablebody text-center" width="100%">
 
-                            <thead className="tablehead" style={{position:'sticky',top:0}}>
+                            <thead className="tablehead">
                             <tr>
                                 <th>Photo</th>
                                 <th>Workshop Name</th>
@@ -198,6 +207,13 @@ class ViewWorkshops extends React.Component {
 
                 </div>
 
+                <ModalMessage
+                    description = {'workshop was successfully edited'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
+            </div>
         );
     }
 }

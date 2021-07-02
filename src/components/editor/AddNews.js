@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ModalMessage from '../PopUp';
 
 class AddNews extends Component {
     state = {
         title: '',
         description: '',
         buttonState: false,
-        buttonText: 'Add News'
+        buttonText: 'Add News',
+        successModal: false
     }
 
     handleInput = e => {
@@ -34,6 +36,7 @@ class AddNews extends Component {
             }
         })
             .then(res => {
+                this.setState({successModal: true});
 
                 console.log(res.data)
 
@@ -107,6 +110,14 @@ class AddNews extends Component {
                     </div>
 
                 </div>
+
+                <ModalMessage
+                    title = {'News'}
+                    description = {'news was successfully added'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
             </form>
         );
     }

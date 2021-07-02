@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import ModalMessage from '../PopUp';
 
 class AddKeynoteSpeaker extends Component {
     state = {
@@ -9,7 +11,9 @@ class AddKeynoteSpeaker extends Component {
         keynoteSpeakers: [],
         buttonState: false,
         buttonText: 'Add Keynote Speaker',
-        img:  ''
+        img:  '',
+        progress: false,
+        successModal: false
     }
 
     handleInput = e => {
@@ -58,7 +62,8 @@ class AddKeynoteSpeaker extends Component {
 
         this.setState({
             buttonState: true,
-            buttonText: 'uploading...'
+            buttonText: 'Please wait...',
+            progress: true
         })
 
         axios.post('https://backend-conference.herokuapp.com/editor/addKeynote/', formData, {
@@ -67,12 +72,14 @@ class AddKeynoteSpeaker extends Component {
             }
         })
             .then(res => {
+                this.setState({successModal: true});
 
                 this.setState({
                     keynoteSpeakers: [...this.state.keynoteSpeakers,res.data],
                     name: '',
                     description: '',
-                    photo: ''
+                    photo: '',
+                    progress: false
 
                 });
 
@@ -165,6 +172,14 @@ class AddKeynoteSpeaker extends Component {
                             </div>
                         </div>
 
+                        {this.state.progress ?
+                            <div className="container p-4">
+                                <ProgressBar style={{height: "4vh"}} animated now={100} variant={'primary'} label={'Uploading'} />
+                            </div>
+                            : ''
+
+                        }
+
                         <div className="text-center">
                             <input
                                 type="submit"
@@ -175,6 +190,14 @@ class AddKeynoteSpeaker extends Component {
                     </div>
 
                 </div>
+
+                <ModalMessage
+                    title = {'Keynote Speaker'}
+                    description = {'keynote speaker was successfully added'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
             </form>
         );
     }

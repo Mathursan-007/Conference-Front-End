@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import ModalMessage from '../PopUp';
 
 class AddWorkshop extends Component {
     state = {
@@ -8,7 +10,9 @@ class AddWorkshop extends Component {
         workshopFile: '',
         buttonState: false,
         buttonText: 'Add Workshop',
-        img:  ''
+        img:  '',
+        progress: false,
+        successModal: false
     }
 
     handleInput = e => {
@@ -36,7 +40,8 @@ class AddWorkshop extends Component {
 
         this.setState({
             buttonState: true,
-            buttonText: 'uploading...'
+            buttonText: 'Please wait...',
+            progress: true
         })
 
         axios.post('https://backend-conference.herokuapp.com/editor/addWorkshop/', formData , {
@@ -45,12 +50,17 @@ class AddWorkshop extends Component {
             }
         })
             .then(res => {
+
+                this.setState({successModal: true})
+
                 this.setState({
                     title: '',
                     description: '',
                     workshopFile: '',
                     buttonState: false,
-                    buttonText: 'Add Workshop'
+                    buttonText: 'Add Workshop',
+                    img: '',
+                    progress: false
                 })
             })
             .catch(err => {
@@ -61,7 +71,6 @@ class AddWorkshop extends Component {
 
     render() {
         return (
-
             <form encType='multipart/form-data' onSubmit={this.handleSubmit} >
                 <div className="card border-primary rounded-0">
                     <div className="card-header p-0">
@@ -129,6 +138,14 @@ class AddWorkshop extends Component {
                             </div>
                         </div>
 
+                        {this.state.progress ?
+                            <div className="container p-4">
+                                <ProgressBar style={{height: "4vh"}} animated now={100} variant={'primary'} label={'Uploading'} />
+                            </div>
+                            : ''
+
+                        }
+
                         <div className="text-center">
                             <input
                                 type="submit"
@@ -139,6 +156,14 @@ class AddWorkshop extends Component {
                     </div>
 
                 </div>
+
+                <ModalMessage
+                    title = {'Workshop'}
+                    description = {'workshop was successfully added'}
+                    show={this.state.successModal}
+                    onHide={() => this.setState({successModal: false})}
+                />
+
             </form>
         );
     }

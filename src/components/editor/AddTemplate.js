@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import ModalMessage from '../PopUp';
 
 class AddTemplate extends Component {
     state = {
         title: '',
         file: '',
         buttonState: false,
-        buttonText: 'Add News'
+        buttonText: 'Add Template',
+        progress: false,
+        successModal: false
     }
 
     handleInput = e => {
@@ -29,20 +33,23 @@ class AddTemplate extends Component {
 
         this.setState({
             buttonState: true,
-            buttonText: 'Uploading file...'
+            buttonText: 'Please wait...',
+            progress: true
         })
 
-        axios.post('https://backend-conference.herokuapp.com/editor/addTemplate/', formData,{
+        axios.post('https://backend-conference.herokuapp.com/editor/addTemplate/', formData, {
             headers:{
                 Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {
+                this.setState({successModal: true});
                 this.setState({
                     title: '',
                     file: '',
                     buttonState: false,
-                    buttonText: 'Add News'
+                    buttonText: 'Add Template',
+                    progress: false
                 })
             })
             .catch(err => {
@@ -97,6 +104,14 @@ class AddTemplate extends Component {
                             </div>
                         </div>
 
+                        {this.state.progress ?
+                            <div className="container p-4">
+                                <ProgressBar style={{height: "4vh"}} animated now={100} variant={'primary'} label={'Uploading'} />
+                            </div>
+                            : ''
+
+                        }
+
                         <div className="text-center">
                             <input
                                 type="submit"
@@ -105,6 +120,13 @@ class AddTemplate extends Component {
                                 className="btn btn-info btn-block rounded-0 py-2" />
                         </div>
                     </div>
+
+                    <ModalMessage
+                        title = {'Template'}
+                        description = {'template was successfully added'}
+                        show={this.state.successModal}
+                        onHide={() => this.setState({successModal: false})}
+                    />
 
                 </div>
             </form>

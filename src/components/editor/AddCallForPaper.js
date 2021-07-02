@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import ModalMessage from '../PopUp';
 
 class AddCallForPaper extends Component {
-
     state = {
         title: '',
         callForPaperFile: '',
         buttonState: false,
-        buttonText: 'Add Call for Paper'
+        buttonText: 'Add Call for Paper',
+        show: false
     }
 
     handleInput = e => {
@@ -29,13 +30,14 @@ class AddCallForPaper extends Component {
         })
 
 
-        axios.post('https://backend-conference.herokuapp.com/editor/addCallForPaper', callForPaper , {
+        axios.post('https://backend-conference.herokuapp.com/addCallForPaper/', callForPaper , {
             headers:{
                 Authorization:localStorage.getItem("token")
             }
         })
             .then(res => {
-                console.log(res.data)
+                this.setState({show: true})
+
                 this.setState({
                     title: '',
                     buttonState: false,
@@ -83,12 +85,19 @@ class AddCallForPaper extends Component {
                                 type="submit"
                                 value={this.state.buttonText}
                                 className="btn btn-info btn-block rounded-0 py-2"
-                                disabled={this.state.buttonState}
-                                />
+                                disabled={this.state.buttonState}/>
                         </div>
                     </div>
 
                 </div>
+
+                <ModalMessage
+                    title = {'Call for Paper'}
+                    description = {'call for paper was successfully added'}
+                    show={this.state.show}
+                    onHide={() => this.setState({show: false})}
+                />
+
             </form>
         );
     }
