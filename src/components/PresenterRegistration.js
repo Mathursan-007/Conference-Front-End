@@ -124,7 +124,7 @@ class PresenterRegistration extends React.Component{
             <div>
                 <div className="container" style={{marginTop:"100px"}}>
                     <header className="jumbotron" style={{backgroundColor:"#040935"}}>
-                        <h1 className="text-center display-3" id="title" style={{color:"#fff"}}>Researcher Registration </h1>
+                        <h1 className="text-center display-3" id="title" style={{color:"#fff"}}>Presenter Registration </h1>
                     </header>
 
                     <div className="container">

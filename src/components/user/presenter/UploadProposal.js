@@ -94,7 +94,7 @@ class UploadProposal extends React.Component{
         return(
 
             <div>
-                <section className="signup-section pt-5 pb-5">
+                <section className="signup-section pt-3 pb-3">
                     <div className="container">
 
                         <div className="row">

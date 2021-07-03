@@ -79,15 +79,7 @@ class ResearcherDashBoard extends React.Component{
         return(
 
             <div>
-
-                <div className="notifications">
-                    <Link to={"/researcher/notifications"} className="notification">
-                        <span><i className="fa fa-bell fa-2x" aria-hidden="true"></i></span>
-                        <span className="count">{this.state.notifications}</span>
-                    </Link>
-                </div>
-
-
+                
                 <div className={"sidebar"}>
 
                     <Link to={"/researcher/uploadPaper"}><i className="fa fa-cloud-upload  mr-2"></i>Paper Submissions</Link>

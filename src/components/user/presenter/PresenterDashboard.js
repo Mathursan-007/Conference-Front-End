@@ -78,12 +78,7 @@ class PresenterDashBoard extends React.Component{
 
         return(
             <div>
-                <div className="notifications">
-                    <Link to={"/presenter/notifications"} className="notification">
-                        <span><i className="fa fa-bell fa-2x" aria-hidden="true"></i></span>
-                        <span className="count">{this.state.notifications}</span>
-                    </Link>
-                </div>
+                
                 <div className={"sidebar"}>
                     <Link to={"/presenter/uploadProposal"}><i className="fa fa-cloud-upload  mr-2"></i>Proposal Submissions</Link>
                     <Link to={"/presenter/notifications"}><span><i className="fa fa-bell mr-2" aria-hidden="true"></i></span>Notifications</Link>
