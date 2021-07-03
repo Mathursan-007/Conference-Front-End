@@ -18,8 +18,7 @@ class Requests extends React.Component{
 
     componentDidMount() {
 
-
-
+        
        axios.get("https://backend-conference.herokuapp.com/admin/requests")
            .then(response=>{
                this.setState({requests:response.data})

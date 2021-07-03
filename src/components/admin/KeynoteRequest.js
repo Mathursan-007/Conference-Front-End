@@ -6,7 +6,8 @@ function KeynoteRequest(props) {
         <div>
             <img src={props.request.details.photo} width={200} height={200}/>
             <h2>{props.request.details.name}</h2>
-            <p><b>Last modified:</b>{props.request.details.description}</p>
+            <p>{props.request.details.description}</p>
+            <p><b>Last modified:</b>{props.request.last_modified}</p>
         </div>
     )
 
