@@ -48,13 +48,18 @@ export default class ResearchUpload extends React.Component {
             })
     }
 
-    clickEvent=()=>{
+    clickEvent=(status, reviewerID)=>{
 
-        if(this.state.status=="approved"||this.state.status=="rejected"){
+        const length = reviewerID.toString().length;
+        console.log("length :", length);
+
+        if( (status=="approved"||status=="rejected" || length<5 ) ) {
             return true;
-        }else if(this.state.status=="pending"){
+
+        }else if( status=="pending" ) {
             return false;
         }
+
 
     }
 

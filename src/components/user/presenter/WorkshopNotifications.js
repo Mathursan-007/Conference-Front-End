@@ -44,7 +44,7 @@ export default class WorkshopNotifications extends Component {
                 </div>
             )
         }
-        else if(this.state.researchUploads.details==null ){
+        else if(this.state.workshopUploads.details==null ){
             return (
                 <PopUp description={"No notifications"} show={this.state.show} onHide={()=>this.setState({show:false})}/>
             )

@@ -22,6 +22,7 @@ class AdminDashboard extends React.Component{
 
     componentDidMount() {
 
+        
         if (localStorage.getItem('token')) {
             if (decode(localStorage.getItem('token')).username !== 'Admin') {
                 window.location = "/login"
