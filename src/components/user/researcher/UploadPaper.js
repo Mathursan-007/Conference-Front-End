@@ -117,7 +117,7 @@ class UploadPaper extends React.Component{
         return(
 
             <div>
-                <section className="signup-section pt-3 pb-3">
+                <section className="signup-section pt-3 pb-5">
                     <div className="container" style={{marginRight:'100px'}}>
 
                         <div className="row">
