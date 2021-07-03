@@ -71,7 +71,7 @@ class UploadPaper extends React.Component{
                 progress: true
             })
 
-            axios.post('http://localhost:5000/user/addResearcherUploads', formData, {
+            axios.post('https://backend-conference.herokuapp.com/user/addResearcherUploads', formData, {
                 headers: {
                     Authorization: localStorage.getItem("token")
                 }

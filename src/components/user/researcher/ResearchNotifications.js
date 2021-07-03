@@ -90,7 +90,7 @@ export default class ResearchNotifications extends Component {
                     <PopUp description={"Ths is to inform you that your Research Paper Submission is yet to be reviewed..."} show={this.state.show} onHide={()=>this.setState({show:false})}/>
                 </div>
             )
-        } else if(this.state.researchUploads.details===null ){
+        } else if(this.state.researchUploads.details==null ){
             return (
                 <PopUp description={"No notifications"} show={this.state.show} onHide={()=>this.setState({show:false})}/>
             )

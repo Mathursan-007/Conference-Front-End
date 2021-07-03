@@ -68,7 +68,7 @@ class UploadProposal extends React.Component{
             progress: true
         })
 
-        axios.post('http://localhost:5000/user/addPresenterUploads', formData,{
+        axios.post('https://backend-conference.herokuapp.com/user/addPresenterUploads', formData,{
             headers:{
                 Authorization:localStorage.getItem("token")
             }
