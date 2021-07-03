@@ -42,7 +42,7 @@ export default class CallForPapers extends React.Component{
 
                 <h3 className="text-center font-weight-bold"><u>TOPICS</u></h3><br/>
                 <div className="container">
-                    <div className="row">
+                    <div className="row justify-content-between">
 
                         {this.state.callForPapers.map(req =>
 

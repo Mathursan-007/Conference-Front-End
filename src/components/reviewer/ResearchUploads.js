@@ -34,7 +34,7 @@ export default class ResearchUploads extends React.Component {
 
                 let stacks = [];
 
-                this.state.researchUploads.reverse().map(item => {
+                this.state.researchUploads.map(item => {
 
                     stacks = stacks.concat(item.stacks.split(',') );
 
@@ -51,7 +51,7 @@ export default class ResearchUploads extends React.Component {
                     label: 'ALL'
                 }];
 
-                this.state.uniqueStacks.reverse().map(item => {
+                this.state.uniqueStacks.map(item => {
                     let stack = {
                         value: item,
                         label: item

@@ -37,9 +37,9 @@ export default class News extends React.Component{
                                     {req.status == 'approved' ?
                                         <div className="card back col-md-5 mt-3"  style={{minHeight: "50vh",maxWidth: "90vh"}}>
                                             <div className="card-body m-1 rounded">
-                                                <h5 className="card-title text-white text-center">{req.details.name}</h5>
-                                                <p className="card-text text-light text-center mt-5">{req.details.description}</p>
-                                                <p className="card-text"><small className="text-light">{req.details.date}</small></p>
+                                                <h3 className="card-title text-white text-center">{req.details.name}</h3>
+                                                <h4 className="card-text text-light text-center mt-5">{req.details.description}</h4>
+                                                <h3 className="card-text"><small className="text-light">{req.details.date}</small></h3>
                                             </div>
                                         </div>
                                         : ''}

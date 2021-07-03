@@ -56,7 +56,7 @@ export default class KeynoteSpeakers extends React.Component{
                                         <div className='Content'>
                                             <div>
                                                 <h2>{req.details.name}</h2>
-                                                <p>{req.details.description}</p>
+                                                <h3>{req.details.description}</h3>
                                                 <a href="#">Learn More</a>
                                             </div>
                                         </div>
