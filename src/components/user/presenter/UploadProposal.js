@@ -84,6 +84,7 @@ class UploadProposal extends React.Component{
                     buttonState: true,
                     buttonText: 'Already submitted'
                 })
+                this.forceUpdate()
             })
             .catch(err => {
                 console.log(err);

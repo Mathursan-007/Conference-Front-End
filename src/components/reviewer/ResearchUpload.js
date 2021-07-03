@@ -31,7 +31,7 @@ export default class ResearchUpload extends React.Component {
 
         console.log(this.state.reviewerID)
 
-        axios.patch('http://localhost:5000/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
+        axios.patch('https://backend-conference.herokuapp.com/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
             email:this.props.upload.details.email,type:"research"},{
             headers:{
                 Authorization:localStorage.getItem("token")
@@ -94,7 +94,7 @@ export default class ResearchUpload extends React.Component {
                     <p>Researcher Email : {this.props.upload.details.email}</p>
                     <p>Researcher Contact : {this.props.upload.details.phoneNumber}</p>
                     <p>Reviewed By : <input type="text" name="reviewerID" className="rev-id" placeholder="Please enter your ID"
-                                            value={this.state.reviewerID} onChange={this.handleInput} /> </p>
+                                            value={this.state.reviewerID} onChange={this.handleInput} required/> </p>
                 </ModalBody>
                 <Modal.Footer>
                     <a href={url}><button className="rev-btn-url">View Research Paper</button></a>

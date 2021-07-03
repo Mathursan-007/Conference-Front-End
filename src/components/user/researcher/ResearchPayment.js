@@ -57,6 +57,7 @@ export default class ResearchPayment extends Component {
                 console.log("Added data: ", response);
                 this.setState( {paymentStatus: 'paid'});
                 this.UpdatePaymentStatus();
+                this.forceUpdate()
                 window.location='researcher/notification'
             })
             .catch(error => {

@@ -40,11 +40,11 @@ export default class WorkshopNotifications extends Component {
 
                 <div>
                     <PopUp description={`Your Workshop Proposal Submission is ${this.state.workshopUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
-                    <h3>Your Research Paper Submission is yet to be reviewed...</h3>
+                    <h3>Your Proposal yet to be reviewed...</h3>
                 </div>
             )
         }
-        else {
+        else if(this.state.researchUploads.details==null ){
             return (
                 <PopUp description={"No notifications"} show={this.state.show} onHide={()=>this.setState({show:false})}/>
             )

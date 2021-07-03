@@ -81,7 +81,7 @@ export default class WorkshopUpload extends React.Component {
                     <p>Presenter Contact : {this.props.workshopUpload.details.phoneNumber}</p>
 
                     <p>Reviewed By : <input type="text" name="reviewerID" className="rev-id" placeholder="Please enter your ID"
-                                            value={this.state.reviewerID} onChange={this.handleInput} /> </p>
+                                            value={this.state.reviewerID} onChange={this.handleInput} required/> </p>
                 </ModalBody>
                 <Modal.Footer>
                     
