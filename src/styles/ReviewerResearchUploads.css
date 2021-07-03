@@ -1,8 +1,8 @@
 .table th {
 
     text-align: center;
-    background-image: linear-gradient(to right top, #7e8796, #0d1316, #010134, #010615, #c5cbb8);
-    background-image: radial-gradient(circle,#5a77a8, #697eab, #7785ae, #848db0, #9095b3);
+
+    background-image: radial-gradient(circle,#5a77a8, #697eab, #7785ae, #7785ae, #9095b3);
 
 }
 
@@ -145,7 +145,11 @@
     transition: all 0.1s ease-in-out;
 }
 
-.rev-btn-approve:hover {
+.rev-btn-approve:disabled,  .rev-btn-reject:disabled {
+    opacity: 0.4;
+}
+
+.rev-btn-approve:hover:enabled {
     background-color: #1de577;
     color: #ffffff;
     font-weight: bold;
@@ -166,7 +170,7 @@
     transition: all 0.1s ease-in-out;
 }
 
-.rev-btn-reject:hover {
+.rev-btn-reject:hover:enabled {
     background-color: #c60e64;
     color: #ffffff;
     font-weight: bold;
