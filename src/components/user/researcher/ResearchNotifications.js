@@ -26,7 +26,7 @@ export default class ResearchNotifications extends Component {
         this.setState( {researchUploads: this.props.researchUploads});
         this.setState( {email: this.props.researchUploads.user});
         this.setState( {_id: this.props.researchUploads._id});
-        this.setState( {paymentStatus: this.props.researchUploads.details.paymentStatus});
+        this.setState( {paymentStatus: this.props.researchUploads.details?this.props.researchUploads.details.paymentStatus:''});
     }
 
 
@@ -60,14 +60,14 @@ export default class ResearchNotifications extends Component {
 
                     <div>
                         <div>
-                            <PopUp description={`This is to inform you that your Research Paper Submission has
+                            <PopUp description={`Your Research Paper Submission has
                         been ${this.state.researchUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
                         </div>
 
                         <h3>Proceed with making the payment to publish your research at the Conference</h3>
 
-                        <Button style={{backgroundColor:this.state.researchUploads.details.paymentStatus === "pending" ? '#85a8dd':this.state.color}}
-                                disabled={this.state.researchUploads.details.paymentStatus === "pending" ? true : false}
+                        <Button style={{backgroundColor:this.state.researchUploads.details.paymentStatus === "pending" ? this.state.color:'#85a8dd'}}
+                                disabled={this.state.researchUploads.details.paymentStatus === "pending" ? false : true}
                                 onClick={() => this.navigateToPaymentPage(this.state.email, this.state._id)}
                                 className="rev-btn-payment">Proceed To Payment</Button>
 
@@ -90,7 +90,7 @@ export default class ResearchNotifications extends Component {
                     <PopUp description={"Ths is to inform you that your Research Paper Submission is yet to be reviewed..."} show={this.state.show} onHide={()=>this.setState({show:false})}/>
                 </div>
             )
-        } else {
+        } else if(this.state.researchUploads.details===null ){
             return (
                 <PopUp description={"No notifications"} show={this.state.show} onHide={()=>this.setState({show:false})}/>
             )

@@ -49,7 +49,7 @@ export default class ResearchPayment extends Component {
 
         axios.post('https://backend-conference.herokuapp.com/user/addPayment', payment, {
             headers:{
-                Authorization:sessionStorage.getItem("token")
+                Authorization:localStorage.getItem("token")
             }
         })
             .then(response => {
@@ -57,6 +57,7 @@ export default class ResearchPayment extends Component {
                 console.log("Added data: ", response);
                 this.setState( {paymentStatus: 'paid'});
                 this.UpdatePaymentStatus();
+                window.location='researcher/notification'
             })
             .catch(error => {
                 console.error(error);
@@ -64,10 +65,10 @@ export default class ResearchPayment extends Component {
     }
 
     UpdatePaymentStatus() {
-        axios.patch('http://localhost:5000/reviewer/upload/payment/' + this.state.researchPaperID,
+        axios.patch('https://backend-conference.herokuapp.com/reviewer/upload/payment/' + this.state.researchPaperID,
             {status:"paid"} ,{
                 headers:{
-                    Authorization:sessionStorage.getItem("token")
+                    Authorization:localStorage.getItem("token")
                 }
             })
             .then(response => {
