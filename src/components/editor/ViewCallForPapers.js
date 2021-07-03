@@ -120,7 +120,7 @@ class ViewCallForPapers extends React.Component {
                             </thead>
                             <tbody>
 
-                            {this.state.requests.map(request =>
+                            {this.state.requests.reverse().map(request =>
                                 <React.Fragment>
                                     {(request.type === 'call for paper') ?
                                         <tr>
@@ -152,15 +152,17 @@ class ViewCallForPapers extends React.Component {
                         </table>
                     </div>
 
-                </div>
-
                 <ModalMessage
                     description = {'call for paper was successfully edited'}
                     show={this.state.successModal}
                     onHide={() => this.setState({successModal: false})}
                 />
+                
+                </div>
 
-            </div>
+               
+
+        
         );
     }
 }

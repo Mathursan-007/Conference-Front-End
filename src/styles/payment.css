@@ -1,5 +1,5 @@
 .payment-body {
-    background: linear-gradient(to right, rgba(235, 224, 232, 1) 52%, rgb(255, 0, 0) 53%, rgb(255, 0, 0) 100%);
+    background: linear-gradient(to right, rgb(68, 74, 123) 52%, rgb(27, 35, 123) 53%, rgb(4, 9, 53) 100%);
     font-family: 'Roboto', sans-serif
 }
 
@@ -29,7 +29,7 @@
 }
 
 .payment-input {
-    border-bottom: 1px solid #E8E5D2 !important;
+    border-bottom: 1px solid #040935 !important;
     font-weight: bold;
     border-radius: 0;
     border: 0
@@ -46,7 +46,7 @@
 }
 
 .payment-btn {
-    background: #af1400 !important;
+    background: #040935 !important;
     border: none;
     border-radius: 30px;
     width:200px;

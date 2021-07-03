@@ -34,7 +34,7 @@ export default class ResearchUploads extends React.Component {
 
                 let stacks = [];
 
-                this.state.researchUploads.map(item => {
+                this.state.researchUploads.reverse().map(item => {
 
                     stacks = stacks.concat(item.stacks.split(',') );
 
@@ -51,7 +51,7 @@ export default class ResearchUploads extends React.Component {
                     label: 'ALL'
                 }];
 
-                this.state.uniqueStacks.map(item => {
+                this.state.uniqueStacks.reverse().map(item => {
                     let stack = {
                         value: item,
                         label: item
@@ -69,6 +69,7 @@ export default class ResearchUploads extends React.Component {
     }
 
     onStackSelect(e) {
+
         this.setState( {selectedStack: (e.value)});
 
     }
@@ -79,7 +80,7 @@ export default class ResearchUploads extends React.Component {
 
         if(this.state.selectedStack === '' || this.state.selectedStack === 'ALL') {
             return (
-                this.state.researchUploads.map(upload => {
+                this.state.researchUploads.reverse().map(upload => {
                     console.log("res: ", upload);
                     return (
                         <ResearchUpload upload={upload} key={upload._id} num={this.state.researchUploads.indexOf(upload)+1}/>
@@ -90,7 +91,7 @@ export default class ResearchUploads extends React.Component {
 
         else {
             return (
-                this.state.researchUploads.map(upload => {
+                this.state.researchUploads.reverse().map(upload => {
                     let stack = upload.stacks;
                     if(stack.includes(this.state.selectedStack)) {
                         return (
@@ -108,7 +109,7 @@ export default class ResearchUploads extends React.Component {
     render() {
         return (
 
-            <div class="container" style={{marginTop: "100px"}}>>
+            <div class="container" style={{marginTop: "100px",marginRight:'120px'}}>
 
                 <label className="filterLabel">Filter By Technology Stacks</label><br/><br/>
                 <Select
@@ -121,26 +122,26 @@ export default class ResearchUploads extends React.Component {
                 <br/><br/>
 
 
-                    <div className="table-responsive border-dark">
-                        <table className="table table-hover table-dark table-condensed tablebody text-center">
+                <div className="table-responsive border-dark">
+                    <table className="table table-hover table-dark table-condensed tablebody text-center">
 
-                            <thead style={{position:'sticky',top:0}} className={"tablehead"}>
-                    <tr class="rev-tr">
-                        <th class="rev-th">No </th>
-                        <th class="rev-th">Email</th>
-                        <th class="rev-th">Phone No.</th>
-                        <th className="rev-th">Stacks</th>
-                        <th class="rev-th">Status</th>
-                        <th class="rev-th">View Submission</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                        <thead style={{position:'sticky',top:0}} className={"tablehead"}>
+                        <tr class="rev-tr">
+                            <th class="rev-th">No </th>
+                            <th class="rev-th">Email</th>
+                            <th class="rev-th">Phone No.</th>
+                            <th className="rev-th">Stacks</th>
+                            <th class="rev-th">Status</th>
+                            <th class="rev-th">View Submission</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                    {this.display()}
+                        {this.display()}
 
-                    </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
                 <br/>
 
             </div>

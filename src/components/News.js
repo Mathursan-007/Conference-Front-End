@@ -29,14 +29,13 @@ export default class News extends React.Component{
             <div>
                 <div className="body" style={{minHeight: "100vh",marginTop:"100px"}} id="news">
                     <h2 className="text-center font-weight-bold"><u>LATEST NEWS</u></h2><br/>
-                    <div className="container s">
-                        <div className="row">
-
+                    <div className="container text-center">
+                        <div className="row justify-content-between">
                             {this.state.news.map(req =>
 
                                 <React.Fragment>
                                     {req.status == 'approved' ?
-                                        <div className="card back col-sm-4 mt-3 ml-2"  style={{minHeight: "40vh",maxWidth: "60vh"}}>
+                                        <div className="card back col-md-5 mt-3"  style={{minHeight: "50vh",maxWidth: "90vh"}}>
                                             <div className="card-body m-1 rounded">
                                                 <h5 className="card-title text-white text-center">{req.details.name}</h5>
                                                 <p className="card-text text-light text-center">{req.details.description}</p>

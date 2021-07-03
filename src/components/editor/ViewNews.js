@@ -125,7 +125,6 @@ class ViewNews extends React.Component {
                 <div className="table-responsive border-dark">
                     <table className="table table-hover table-dark  table-condensed tablebody text-center">
                         <thead style={{position:'sticky',top:0}} className={"tablehead"}>
-                            <thead className="tablehead">
                             <tr>
                                 <th>Title</th>
                                 <th>Date</th>
@@ -135,7 +134,7 @@ class ViewNews extends React.Component {
                             </thead>
                             <tbody>
 
-                            {this.state.requests.map(request =>
+                            {this.state.requests.reverse().map(request =>
                                 <React.Fragment>
                                     {(request.type === 'news') ?
                                         <tr>
@@ -167,8 +166,6 @@ class ViewNews extends React.Component {
                             </tbody>
                         </table>
                     </div>
-
-                </div>
 
                 <ModalMessage
                     description = {'news was successfully edited'}

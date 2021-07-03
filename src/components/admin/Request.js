@@ -42,7 +42,7 @@ class Request extends React.Component {
 
     reply=(reply)=>{
 
-        axios.patch(`http://localhost:5000/admin/reply/${this.props.request._id}`,{reply},{
+        axios.patch(`https://backend-conference.herokuapp.com/admin/reply/${this.props.request._id}`,{reply},{
             headers:{
                 Authorization:localStorage.getItem("token")
             }

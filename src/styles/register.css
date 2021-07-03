@@ -51,7 +51,7 @@ input,select,textarea{
     right:0;
     width:60%;
     height:100%;
-    background-color: #af1400;
+    background-color: #040935;
     z-index:-1;
     clip-path:polygon(100% 0,0 0,100% 100%)}
 @media only screen and (max-width:991px){
@@ -103,11 +103,11 @@ input,select,textarea{
     margin-left:0
 }
 .control a{
-    color:#af1400
+    color:#040935
 }
 .signup-form .form-group input[type=submit]{
     width:auto;
-    background-color:#af1400;
+    background-color:#040935;
     margin-top:30px;
     position:relative;
     padding:0 40px;
@@ -131,7 +131,7 @@ input,select,textarea{
     line-height:54px;
     color:#777}
 .control-two{
-    color:#af1400
+    color:#040935
 }
 .sign-up-option{
     display:flex;
@@ -159,7 +159,7 @@ input,select,textarea{
     padding:8px 20px
 }
 .Aregister-btn {
-    background: #af1400 !important;
+    background: #040935 !important;
     border: none;
     border-radius: 30px;
     width:200px;

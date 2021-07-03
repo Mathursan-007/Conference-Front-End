@@ -14,7 +14,9 @@ export default class ResearchNotifications extends Component {
             researchUploads: {},
             email: '',
             _id: '',
-            paymentStatus: ''
+            paymentStatus: '',
+            show:true,
+            color:'#06357a'
         }
     }
 
@@ -29,6 +31,7 @@ export default class ResearchNotifications extends Component {
 
 
     navigateToPaymentPage(email, id) {
+        console.log(id)
         window.location = `/researcher/payment/${email}/${id}`
     }
 
@@ -41,13 +44,12 @@ export default class ResearchNotifications extends Component {
                 return (
 
                     <div>
-                        <h1>Submission Status</h1>
-                        <h3>This is to inform you that your Research Paper Submission has
-                            been {this.state.researchUploads.status}</h3>
+                        <PopUp description={`Your Research Paper Submission has
+                        been ${this.state.researchUploads.details.paymentStatus}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
 
                         <h3>You have made the Payment Successfully!</h3>
 
-                        <Button disabled={this.state.researchUploads.details.paymentStatus === "paid" ? true : false}
+                        <Button style={{backgroundColor:this.state.researchUploads.details.paymentStatus === "paid" ? '#85a8dd':this.state.color}} disabled={this.state.researchUploads.details.paymentStatus === "paid" ? true : false}
                                 onClick={() => this.navigateToPaymentPage(this.state.email, this.state._id)}
                                 className="rev-btn-payment">Proceed To Payment</Button>
 
@@ -57,13 +59,15 @@ export default class ResearchNotifications extends Component {
                 return (
 
                     <div>
-                        <h1>Submission Status</h1>
-                        <h3>This is to inform you that your Research Paper Submission has
-                            been {this.state.researchUploads.status}</h3>
+                        <div>
+                            <PopUp description={`This is to inform you that your Research Paper Submission has
+                        been ${this.state.researchUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
+                        </div>
 
                         <h3>Proceed with making the payment to publish your research at the Conference</h3>
 
-                        <Button disabled={this.state.researchUploads.details.paymentStatus === "pending" ? true : false}
+                        <Button style={{backgroundColor:this.state.researchUploads.details.paymentStatus === "pending" ? '#85a8dd':this.state.color}}
+                                disabled={this.state.researchUploads.details.paymentStatus === "pending" ? true : false}
                                 onClick={() => this.navigateToPaymentPage(this.state.email, this.state._id)}
                                 className="rev-btn-payment">Proceed To Payment</Button>
 
@@ -75,17 +79,15 @@ export default class ResearchNotifications extends Component {
             return (
 
                 <div>
-                    <h1>Submission Status</h1>
-                    <h3>This is to inform you that your Research Paper Submission has
-                        been {this.state.researchUploads.status}</h3>
+                    <PopUp description={`This is to inform you that your Research Paper Submission has
+                        been ${this.state.researchUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
                 </div>
             )
         } else if (this.state.researchUploads.status === "pending") {
             return (
 
                 <div>
-                    <h1>Submission Status</h1>
-                    <h3>This is to inform you that your Research Paper Submission is yet to be reviewed...</h3>
+                    <PopUp description={"Ths is to inform you that your Research Paper Submission is yet to be reviewed..."} show={this.state.show} onHide={()=>this.setState({show:false})}/>
                 </div>
             )
         } else {
@@ -98,9 +100,7 @@ export default class ResearchNotifications extends Component {
 
     render() {
         return (
-            <div>
-
-                <h1>Notifications</h1>
+            <div className={"container p-5 text-center mt-5 text-light"}>
 
                 {this.showResearchNotification()}
 

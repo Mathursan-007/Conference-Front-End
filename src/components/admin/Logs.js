@@ -31,7 +31,7 @@ class Logs extends React.Component{
 
 render() {
     return(
-        <div className="container" style={{marginTop: "120px"}}>
+        <div className="container" style={{marginTop: "120px",marginRight:'120px'}}>
             <div className="table-responsive border-dark">
                 <table className="table table-hover table-dark table-condensed tablebody text-center">
 
@@ -45,7 +45,7 @@ render() {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.logs.map(log=>{
+                    {this.state.logs.reverse().map(log=>{
                         return <Log log={log} key={log._id} num={this.state.logs.indexOf(log)+1}/>
                     })}
                     </tbody>

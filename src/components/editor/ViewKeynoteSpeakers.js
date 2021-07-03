@@ -157,7 +157,6 @@ class ViewKeynoteSpeakers extends React.Component {
                 <div className="table-responsive border-dark">
                     <table className="table table-hover table-dark  table-condensed tablebody text-center">
                         <thead style={{position:'sticky',top:0}} className={"tablehead"}>
-                            <thead className="tablehead">
                             <tr>
                                 <th>Photo</th>
                                 <th>Speaker Name</th>
@@ -200,10 +199,7 @@ class ViewKeynoteSpeakers extends React.Component {
 
                             </tbody>
                         </table>
-                    </div>
-
                 </div>
-
                 <ModalMessage
                     description = {'keynote speaker was successfully edited'}
                     show={this.state.successModal}

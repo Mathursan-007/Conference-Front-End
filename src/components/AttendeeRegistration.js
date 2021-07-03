@@ -38,6 +38,19 @@ class AttendeeRegistration extends React.Component{
     }
 
 
+    checkInput=()=> {
+
+        if (this.state.fullName.length == 0 || this.state.email.length == 0 || this.state.phoneNumber.length == 0 || this.state.plan.length == 0) {
+            
+            return true
+
+        } else {
+
+            return false
+
+        }
+    }
+    
 
     render() {
 
@@ -76,13 +89,15 @@ class AttendeeRegistration extends React.Component{
                                                                     <option value= "Premium">Premium</option>
                                                                 </select>
 
-                                                                <input type="number" name="price" value={PriceCheck(this.state.type)} onChange={this.handleInput}  placeholder="Amount" disabled={true}/>
+                                                                <input type="number" name="price" value={PriceCheck(this.state.type)} onChange={this.handleInput}  placeholder="Amount" disabled={true}/><br/>
+                                                                {this.checkInput() ?
+                                                                    <p className={"text-danger p-2"}>* Please fill all the fileds..</p> : ' '}
 
                                                             </div><br/><br/>
                                                             <div className="col-lg-12 form-group">
                                                                 <Link to={{pathname:"/payment",
                                                                     state:{name:this.state.fullName,email:this.state.email,phoneNo:this.state.phoneNumber,plan:this.state.plan,price:PriceCheck(this.state.type)}}}>
-                                                                    <button type="submit" className="Aregister-btn"> Next </button>
+                                                                    <button type="submit" className="Aregister-btn pb-2" disabled={this.checkInput()}> Next </button>
                                                                 </Link>
                                                             </div>
                                                         </div>

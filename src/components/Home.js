@@ -43,16 +43,16 @@ class Home extends Component {
                 <div class="bg-cover text-white"  >
                     <div class="container py-5 text-center height" >
                         <div className="bee"  >
-                            <h1 class="font-weight-bold">{this.state.name}</h1>
-                            <p class="font-italic mb-0">{this.state.faculty}.</p>
-                            <p class="font-italic mb-0">{this.state.description}</p>
-                            <p class="font-italic">
+                            <h1 class="font-weight-bold display-4">{this.state.name}</h1>
+                            <h1 class="font-italic mb-0 mt-2">{this.state.faculty}.</h1>
+                            <h2 class="font-italic mb-0 mt-2">{this.state.description}</h2>
+                            <h3 class="font-italic mt-2 text-info">
                                 <u>{this.state.start_date} - {this.state.end_date}</u>
-                            </p>
-                            <p class="font-italic">
+                            </h3>
+                            <h1 class="font-italic">
                                 <u>{this.state.institute}</u>
-                            </p>
-                            <Link to="/news" role="button" class="btn btn-primary px-5" style={{backgroundColor: "#040935"}}>Latest News</Link>
+                            </h1>
+                            <Link to="/news" role="button" class="btn btn-primary px-5 mt-5" style={{backgroundColor: "#040935"}}>Latest News</Link>
                         </div>
                     </div>
                 </div>

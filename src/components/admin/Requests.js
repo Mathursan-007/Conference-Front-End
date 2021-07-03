@@ -34,7 +34,7 @@ class Requests extends React.Component{
 
     render() {
         return(
-            <div className="container" style={{marginTop: "120px"}}>
+            <div className="container" style={{marginTop: "120px",marginRight:'120px'}}>
                 <div className="table-responsive">
                    <table className="table table-hover table-dark table-condensed tablebody text-center">
                        <thead style={{position:'sticky',top:0}} className={"tablehead"}>
@@ -46,7 +46,7 @@ class Requests extends React.Component{
                        </tr>
                        </thead>
                        <tbody>
-                       {this.state.requests.map(request=>{
+                       {this.state.requests.reverse().map(request=>{
                            return <Request request={request} key={request._id} num={this.state.requests.indexOf(request)+1}/>
                        })
 

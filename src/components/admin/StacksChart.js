@@ -134,7 +134,7 @@ class StacksChart extends React.Component{
 
 
 
-            <div className="card col-md-6 mt-5 ml-4 mr-4"  style={{height: "80vh",maxWidth: "80vh",backgroundColor:'#0b0b8a'}}>
+            <div className="card col-md-6 mt-5 ml-3 mr-4"  style={{height: "80vh",maxWidth: "80vh",backgroundColor:'#afaff1'}}>
                 <Pie options={options} data={data}/>
             </div>
 

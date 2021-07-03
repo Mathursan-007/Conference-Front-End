@@ -15,19 +15,27 @@ export default class ResearchUpload extends React.Component {
         this.state={
             status: this.props.upload.status,
             show:false,
-            reviewerID: this.props.upload.reviewerID,
+            reviewerID:"",
             errorMessage:false,
             popMessage:''
         }
     }
 
+    handleInput = e => {
+        const {name, value} = e.target;
+        this.setState({[name]: value});
+    }
+
+
     changeStatus=(_id, msg) => {
 
-        axios.patch('https://backend-conference.herokuapp.com/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
-                                    email:this.props.upload.details.email,type:"research"},{
-             headers:{
-                 Authorization:localStorage.getItem("token")
-             }
+        console.log(this.state.reviewerID)
+
+        axios.patch('http://localhost:5000/reviewer/upload/' + _id, {status:msg,reviewerID:this.state.reviewerID,
+            email:this.props.upload.details.email,type:"research"},{
+            headers:{
+                Authorization:localStorage.getItem("token")
+            }
         } )
             .then(response => {
 
@@ -86,7 +94,7 @@ export default class ResearchUpload extends React.Component {
                     <p>Researcher Email : {this.props.upload.details.email}</p>
                     <p>Researcher Contact : {this.props.upload.details.phoneNumber}</p>
                     <p>Reviewed By : <input type="text" name="reviewerID" className="rev-id" placeholder="Please enter your ID"
-                                    value={this.state.reviewerID} onChange={this.handleInput} /> </p>
+                                            value={this.state.reviewerID} onChange={this.handleInput} /> </p>
                 </ModalBody>
                 <Modal.Footer>
                     <a href={url}><button className="rev-btn-url">View Research Paper</button></a>
@@ -120,7 +128,7 @@ export default class ResearchUpload extends React.Component {
 
                 {/*{this.props.upload.status=="approved" ?*/}
                 {/*    <td className="rev-td"><button>View</button></td> :*/}
-                    <td className="rev-td"><button className="rev-btn-view"
+                <td className="rev-td"><button className="rev-btn-view"
                                                onClick={()=>this.setState({show:true})}>View</button></td>
                 {/* }*/}
                 {this.showView(upload.details.paper)}

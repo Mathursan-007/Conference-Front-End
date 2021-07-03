@@ -162,7 +162,7 @@ class ViewWorkshops extends React.Component {
                             </thead>
                             <tbody>
 
-                            {this.state.requests.map(request =>
+                            {this.state.requests.reverse().map(request =>
                                 <React.Fragment>
                                     {(request.type === 'workshop') ?
                                         <tr>
@@ -196,8 +196,6 @@ class ViewWorkshops extends React.Component {
                             </tbody>
                         </table>
                     </div>
-
-                </div>
 
                 <ModalMessage
                     description = {'workshop was successfully edited'}

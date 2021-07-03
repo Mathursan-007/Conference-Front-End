@@ -34,14 +34,16 @@ export default class Downloads extends React.Component{
                             <React.Fragment>
                                 {req.status === 'approved' ?
 
-                                    <div className="card col-lg-12 mt-4 text-center bg-dark p-3">
+                                    <div className="col-lg-12 mt-2 text-center p-3" style={{fontSize:'30px'}}>
+                                        <p>{req.details.name+" - "}
                                         <a
                                             href={`${req.details.file}`}
-                                            className="text-light"
+                                            className="text-primary"
                                             download
                                         >
-                                            {req.details.name}
+                                            Download
                                         </a>
+                                        </p>
                                     </div>
                                     : ''}
                             </React.Fragment>

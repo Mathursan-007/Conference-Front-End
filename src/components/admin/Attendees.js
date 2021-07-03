@@ -34,7 +34,7 @@ class Attendees extends React.Component{
 
         return(
 
-            <div className="container" style={{marginTop: "120px"}}>
+            <div className="container" style={{marginTop: "120px",marginRight:'120px'}}>
                 <div className="table-responsive border-dark">
                     <table className="table table-hover table-dark  table-condensed tablebody text-center">
                         <thead style={{position:'sticky',top:0}} className={"tablehead"}>
@@ -47,7 +47,7 @@ class Attendees extends React.Component{
                          </tr>
                         </thead>
                         <tbody>
-                            {this.state.attendees.map(attendee => {
+                            {this.state.attendees.reverse().map(attendee => {
                                 return <Attendee attendee={attendee} key={attendee._id}
                                                 num={this.state.attendees.indexOf(attendee) + 1}/>
                             })

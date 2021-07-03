@@ -19,7 +19,7 @@ class UploadPaper extends React.Component{
             progress:false,
             buttonText:'Submit',
             buttonState: false,
-            color:'#f7bdbd'
+            color:'#8d6bbe'
 
         }
     }
@@ -180,7 +180,7 @@ class UploadPaper extends React.Component{
                                                                     className="cmn-btn"
                                                                     value={this.state.buttonText}
                                                                     disabled={this.state.buttonState}
-                                                                    style={{backgroundColor:this.state.buttonState ? this.state.color :'red'}}
+                                                                    style={{backgroundColor:this.state.buttonState ? this.state.color :'#040935'}}
                                                                 />
                                                             </div>
                                                         </div>

@@ -172,7 +172,7 @@ class ViewConference extends React.Component {
                             <tr>
                                 <th>Title</th>
                                 <th>Institute</th>
-                                <th>status</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -214,8 +214,6 @@ class ViewConference extends React.Component {
                             </tbody>
                         </table>
                     </div>
-
-                </div>
 
                 <ModalMessage
                     description = {'conference was successfully edited'}

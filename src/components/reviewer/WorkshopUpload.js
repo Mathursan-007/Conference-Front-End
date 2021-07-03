@@ -84,7 +84,7 @@ export default class WorkshopUpload extends React.Component {
                                             value={this.state.reviewerID} onChange={this.handleInput} /> </p>
                 </ModalBody>
                 <Modal.Footer>
-                    <Modal.Footer>
+                    
                         <a href={url}><Button className="rev-btn-url">View Workshop Proposal</Button></a>
 
                         <button className="rev-btn-approve" onClick={()=>this.changeStatus(this.props.workshopUpload._id, "approved")}
@@ -94,7 +94,7 @@ export default class WorkshopUpload extends React.Component {
                                 disabled={this.clickEvent(this.state.status, this.state.reviewerID)}>Reject</button>
 
                         <Button className="rev-btn-close" onClick={()=>this.setState({show:false})}>Close</Button>
-                    </Modal.Footer>
+
                 </Modal.Footer>
             </Modal>
 

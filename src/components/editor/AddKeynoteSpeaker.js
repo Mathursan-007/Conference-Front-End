@@ -149,7 +149,7 @@ class AddKeynoteSpeaker extends Component {
 
                         {this.state.img === '' ? '' :
                             <React.Fragment>
-                                <img src={`${this.state.img}`} alt={'no image'} style={{width: "100%",height:"20vh"}} />
+                                <img src={`${this.state.img}`} alt={'no image'} style={{width: "50%",height:"20vh"}} />
                             </React.Fragment>
                         }
 

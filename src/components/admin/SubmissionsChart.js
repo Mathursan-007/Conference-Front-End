@@ -241,7 +241,7 @@ class SubmissionsChart extends React.Component{
         return(
 
 
-            <div className="card col-lg-6 mt-5 ml-1 mr-2"  style={{height:"80vh",maxWidth:"80vh",backgroundColor:'#0b0b8a'}}>
+            <div className="card col-lg-6 mt-5 mr-4"  style={{height:"80vh",maxWidth:"80vh",backgroundColor:'#afaff1'}}>
                 <Line options={options} data={data}/>
             </div>
 

@@ -30,8 +30,8 @@ export default class WorkshopNotifications extends Component {
             return(
 
                 <div>
-                    <h1>Submission Status</h1>
-                    <h3>This is to inform you that your Workshop Proposal Submission has been {this.state.workshopUploads.status}</h3>
+                    <PopUp description={`Your Workshop Proposal Submission has been ${this.state.workshopUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
+                    <h3>Your Workshop Proposal Submission has been {this.state.workshopUploads.status}</h3>
                 </div>
             )
         }
@@ -39,8 +39,8 @@ export default class WorkshopNotifications extends Component {
             return(
 
                 <div>
-                    <h1>Submission Status</h1>
-                    <h3>This is to inform you that your Research Paper Submission is yet to be reviewed...</h3>
+                    <PopUp description={`Your Workshop Proposal Submission is ${this.state.workshopUploads.status}`} show={this.state.show} onHide={()=>this.setState({show:false})}/>
+                    <h3>Your Research Paper Submission is yet to be reviewed...</h3>
                 </div>
             )
         }
@@ -53,11 +53,9 @@ export default class WorkshopNotifications extends Component {
 
     render() {
         return (
-            <div>
-
+            <div className={"container p-5 text-center mt-5 text-light"}>
 
                 {this.showWorkshopNotification()}
-
 
             </div>
         )

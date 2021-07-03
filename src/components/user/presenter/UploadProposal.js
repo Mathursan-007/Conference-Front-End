@@ -19,7 +19,7 @@ class UploadProposal extends React.Component{
             progress:false,
             buttonText:'Submit',
             buttonState: false,
-            color:'#f7bdbd'
+            color:'#8d6bbe'
         }
     }
 
@@ -100,9 +100,6 @@ class UploadProposal extends React.Component{
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="signup-area">
-                                    <div className="signup-element">
-                                        <img src="https://i.ibb.co/bRJVsq5/contact-us-box-bg.png" alt="signup"/>
-                                    </div>
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="signup-left-area">
@@ -134,7 +131,7 @@ class UploadProposal extends React.Component{
                                                             <div className="col-lg-12 form-group">
                                                                 <input type="submit" className="cmn-btn" value={this.state.buttonText}
                                                                        disabled={this.state.buttonState}
-                                                                       style={{backgroundColor:this.state.buttonState ? this.state.color :'red'}}/>
+                                                                       style={{backgroundColor:this.state.buttonState ? this.state.color :'#040935'}}/>
                                                             </div>
                                                         </div>
                                                     </form>

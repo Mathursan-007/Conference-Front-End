@@ -38,27 +38,27 @@ export default class WorkshopUploads extends React.Component {
     render() {
 
         return (
-            <div className="container" style={{marginTop: "120px"}}>
+            <div className="container" style={{marginTop: "120px",marginRight:'120px'}}>
                 <div className="table-responsive border-dark">
                     <table className="table table-hover table-dark table-condensed tablebody text-center">
 
                         <thead style={{position:'sticky',top:0}} className={"tablehead"}>
-                    <tr class="rev-tr">
-                        <th class="rev-th">No</th>
-                        <th class="rev-th">Email</th>
-                        <th class="rev-th">Phone No.</th>
-                        <th class="rev-th">Status</th>
-                        <th class="rev-th">View Submission</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.workshopUploads.map(upload => {
-                        return (
-                            <WorkshopUpload workshopUpload={upload} key={upload._id} num={this.state.workshopUploads.indexOf(upload)+1} />
-                        );
-                    })}
-                    </tbody>
-                 </table>
+                        <tr class="rev-tr">
+                            <th class="rev-th">No</th>
+                            <th class="rev-th">Email</th>
+                            <th class="rev-th">Phone No.</th>
+                            <th class="rev-th">Status</th>
+                            <th class="rev-th">View Submission</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.workshopUploads.reverse().map(upload => {
+                            return (
+                                <WorkshopUpload workshopUpload={upload} key={upload._id} num={this.state.workshopUploads.indexOf(upload)+1} />
+                            );
+                        })}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         )

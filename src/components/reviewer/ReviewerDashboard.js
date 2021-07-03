@@ -40,7 +40,7 @@ export default class ReviewerDashboard extends React.Component {
             <div>
                 <div className={"sidebar"}>
                     <Link to={"/reviewer/researchUploads"}><i className="fa fa-window-restore mr-2"></i>Research Papers</Link>
-                    <Link to={"/reviewer/workshopUploads"}><i className="fa fa-sign-out mr-2"></i>Workshop Proposals</Link>
+                    <Link to={"/reviewer/workshopUploads"}><i className="fa fa-window-restore mr-2"></i>Workshop Proposals</Link>
                     <Link to={"/login"} onClick={this.doLogout}><i className="fa fa-sign-out mr-2"></i>Logout</Link>
                 </div>
                 <div className={"content"}>

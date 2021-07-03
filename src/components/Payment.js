@@ -27,7 +27,7 @@ class Payment extends React.Component{
             price:this.props.location.state.price
 
         };
-
+        
 
 
         axios.post('https://backend-conference.herokuapp.com/user/addAttendee', attendee)
@@ -55,37 +55,37 @@ class Payment extends React.Component{
                         <div className="row d-flex justify-content-center">
                             <div className="col-sm-12">
                                 <div className="card cards mx-auto">
-                                    <p className="payment-heading">PAYMENT DETAILS</p>
+                                    <p className="payment-heading text-center">PAYMENT DETAILS</p>
                                     <form className="payment-card-details " onSubmit={this.handleSubmit}>
-                                        <div className="payment-form-group mb-0">
+                                        <div className="payment-form-group mb-0 ml-2">
                                             <p className="payment-text-warning mb-0">Card Number</p><br/>
                                             <input type="text" className="payment-input" name="card-num" placeholder="1234 5678 9012 3457"
-                                                   size="17" id="payment-cno" minLength="16" maxLength="16"/>
+                                                   size="17" id="payment-cno" minLength="16" maxLength="16" required/>
 
                                         </div>
-                                        <div className="payment-form-group">
+                                        <div className="payment-form-group ml-2">
                                             <p className="payment-text-warning mb-0">Cardholder's Name</p>
-                                            <input type="text" className="payment-input" name="name" placeholder="Name" size="17"/>
+                                            <input type="text" className="payment-input" name="name" placeholder="Name" size="17" required/>
                                         </div>
-                                        <div className="payment-form-group pt-2">
+                                        <div className="payment-form-group pt-2 ml-2">
                                             <div className="row d-flex">
                                                 <div className="col-sm-6">
                                                     <p className="payment-text-warning mb-0">Expiration</p>
                                                     <input type="text" className="payment-input" placeholder="04/2021" name="exp"size="17"
-                                                           id="exp" minLength="7" maxLength="7"/>
+                                                           id="exp" minLength="7" maxLength="7" required/>
                                                 </div>
                                                 <div className="col-sm-3">
-                                                    <p className="payment-text-warning mb-0">CVV</p>
+                                                    <p className="payment-text-warning mb-0 ml-3">CVV</p>
                                                     <input type="password" className="payment-input" name="cvv"
-                                                           placeholder="&#9679;&#9679;&#9679;" size="1" minLength="3"
-                                                           maxLength="3"/>
+                                                           placeholder="123" size="1" minLength="3"
+                                                           maxLength="3" required/>
                                                 </div>
                                             </div>
                                             <div className="form-group">
                                                 <p className="payment-text-warning mb-0">Amount</p>
-                                                <input type="text" name="amount" value={this.props.location.state.price}  size="17" disabled={true}/>
+                                                <input type="text" name="amount" value={this.props.location.state.price}  size="17" disabled={true} required/>
                                             </div>
-                                            <div className="payment-col-sm-5 pt-0">
+                                            <div className="payment-col-sm-5 pt-0 ml-5">
                                                 <button className="payment-btn" type="submit"><i>Confirm Payment</i></button>
                                             </div>
                                         </div>

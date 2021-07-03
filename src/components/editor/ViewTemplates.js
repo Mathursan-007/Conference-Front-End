@@ -150,7 +150,7 @@ class ViewTemplates extends React.Component {
                             </thead>
                             <tbody>
 
-                            {this.state.requests.map(request =>
+                            {this.state.requests.reverse().map(request =>
                                 <React.Fragment>
                                     {(request.type === 'template') ?
                                         <tr>
@@ -182,8 +182,6 @@ class ViewTemplates extends React.Component {
                             </tbody>
                         </table>
                     </div>
-
-                </div>
 
                 <ModalMessage
                     description = {'template was successfully edited'}

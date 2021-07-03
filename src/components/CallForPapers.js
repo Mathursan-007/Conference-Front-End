@@ -49,10 +49,10 @@ export default class CallForPapers extends React.Component{
                             <React.Fragment>
                                 {req.status === 'approved' ?
 
-                                    <div className="card col-sm-4 mt-3 ml-2"  style={{minHeight: "40vh",maxWidth: "60vh",backgroundColor: "#0c0443"}}>
+                                    <div className="card col-sm-4 mt-3 ml-2"  style={{minHeight: "20vh",maxWidth: "40vh",backgroundColor: "#0c0443"}}>
 
-                                        <div className="card-body m-1 rounded">
-                                            <h5 className="card-title text-light">{req.details.name}</h5>
+                                        <div className="card-body m-5 rounded">
+                                            <h5 className="card-title text-light text-center">{req.details.name}</h5>
                                         </div>
                                     </div>
 
